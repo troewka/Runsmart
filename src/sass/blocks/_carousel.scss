@@ -1,0 +1,26 @@
+.carousel {
+   padding: 80px 0;
+   .carousel__prev, .carousel__next { // Стрілки переключення (ПК версія)
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      background-color: #FFF;
+      img {
+         width: 31px;
+         height: 50px;
+      }
+   }
+   .carousel__next {
+      right: 0;
+      left: auto;
+   }
+}
+.tns-outer { // Оболонка (контейнер карусели)
+   width: 730px;
+   margin: 0 auto;
+}
+
+.tns-nav { // Кружки переключення (моб версія)
+   display: none;
+}

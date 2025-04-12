@@ -1,0 +1,202 @@
+@media (max-width: 992px) {
+   .container {
+      padding: 0 15px;
+   }
+   .carousel__prev, .carousel__next {
+      display: none;
+   }
+   .tns-nav {
+      display: block;
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      button {
+         margin-left: 10px;
+         width: 10px;
+         height: 10px;
+         border-radius: 100%;
+         background-color: $bgc_red;
+      }
+      .tns-nav-active {
+            background-color: #000;
+      }
+   }
+   .catalog {
+      &__content {
+         justify-content: space-evenly;
+      }
+      &__tabs {
+         flex-wrap: wrap;
+      }
+   }
+   .reviews {
+      &__item {
+         margin-top: 25px;
+         flex-direction: column;
+         align-items: center;
+      }
+      &__wrapper {
+         margin-top: 20px;
+         width: 100%;
+         margin-top: 20px;
+         padding: 0;
+         text-align: center;
+      }
+   }
+}
+
+@media (max-width: 768px) {
+   .header {
+      &__official {
+         display: none;
+      }
+      &__tell {
+         font-size: 15px;
+      }
+   }
+   .initial {
+      &__wrapper {
+         align-items: center;
+      }
+      &__title {
+         font-size: 35px;
+      }
+      &__subtitle {
+         font-size: 20px;
+      }
+   }
+   .button {
+      width: 140px;
+      &_main {
+         width: 300px;
+      }
+      &_form {
+         width: 100%;
+      }
+   }
+   .advantages {
+      &__wrapper {
+         margin-top: 20px;
+         flex-direction: column;
+         align-items: center;
+
+      }
+      &__item {
+         width: 100%;
+         margin-top: 20px;
+        &:nth-child(1) {
+         margin-top: 0;
+        }
+      }
+      &__head, &__text {
+         margin-top: 10px;
+      }
+   }
+   .consultation {
+      min-height: 550px;
+      padding: 30px 0;
+      &__title {
+         text-align: center;
+         font-size: 24px;
+         line-height: 40px;
+      }
+      &__instruction {
+         text-align: center;
+
+      }
+   }
+   .form {
+      margin: 0 auto;
+   }
+   .tns-outer {
+      width: 540px;
+      img {
+         width: 100%;
+      }
+   }
+   .carousel {
+      padding: 30px 0;
+   }
+   .catalog {
+      padding: 30px 0 80px 0;
+      &__tabs {
+         margin-top: 15px;
+      }
+      &__tab {
+         margin-top: 5px;
+      }
+   }
+   .reviews {
+      &__content {
+         font-size: 14px;
+      }
+   }
+}
+
+@media (max-width: 576px) {
+   .initial {
+      min-height: 520px;
+      padding: 20px 0;
+      &__wrapper {
+         margin-top: 50px;
+      }
+      &__title {
+         font-size: 23px;
+      }
+      &__subtitle {
+         font-size: 13px;
+      }
+      &__icons {
+         width: 100%;
+      }
+   }
+   .header {
+      &__logo {
+         margin: 0 auto;
+      }
+      &__contact {
+         display: none;
+      }
+   }
+   .advantages {
+      min-height: 420px;
+      padding: 20px 0;
+      &__title {
+         font-size: 23px;
+      }
+   }
+   .consultation {
+      min-height: 460px;
+      &__title, &__instruction{
+         font-size: 16px;
+         line-height: 25px;
+      }
+   }
+   .form {
+      width: 100%;
+      padding-top: 15px;
+   }
+   .tns-outer {
+      width: 300px;
+   }
+   .footer {
+      &__information {
+         width: 320px;
+      }
+      &__link {
+         margin: 0 9px;
+      }
+   }
+   .modal {
+      width: 90%;
+      &__close {
+         top: 5px;
+         right: 5px;
+      }
+      &__subtitle {
+         margin-top: 5px;
+      }
+
+   }
+}

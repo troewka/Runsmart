@@ -1,0 +1,46 @@
+.advantages {
+   min-height: 470px;
+   padding: 73px 0 65px 0;
+   background-color: #F6F6F6;
+   &__title {
+      color: $cb;
+      text-align: center;
+      font-size: 30px;
+      font-weight: 700;
+   }
+   &__wrapper {
+      margin-top: 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+   }
+   &__item {
+      width: 230px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+   &__head {
+      margin-top: 30px;
+      color: $cb;
+      font-size: 18px;
+      font-weight: 700;
+   }
+   &__text {
+      margin-top: 20px;
+      color: $cb;
+      text-align: center;
+      font-weight: 300;
+      line-height: 18px;
+      a {
+         color: #F00;
+         text-decoration-line: underline;
+      }
+   }
+   &__picture {
+      &_pulse {
+         animation: heart 2s ease infinite; // назва анімації / швидкість анімації / тип анімації / кількість повторень
+      }
+   }
+}

@@ -1,0 +1,35 @@
+.header {
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+   &__logo {
+      width: 251px;
+      height: 45px;
+      img {
+         width: 100%;
+      }
+   }
+   &__official {
+      color: $cw;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 500;
+      span {
+         margin-top: 7px;
+         display: block;
+         color: #FFF;
+         font-size: 18px;
+      }
+   }
+   &__contact {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+   }
+   &__tell {
+      margin-bottom: 4px;
+      color: $cw;
+      font-size: 18px;
+      font-weight: 700;
+   }
+}

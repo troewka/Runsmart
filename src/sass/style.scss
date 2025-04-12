@@ -1,0 +1,24 @@
+@import "base/nullstyle";
+@import "base/variables";
+@import "base/animation";
+
+* {
+   font-family: 'MuseoModerno', sans-serif;
+}
+
+@import "blocks/container";
+@import "blocks/initial";
+@import "blocks/header";
+@import "blocks/button";
+@import "blocks/advantages";
+@import "blocks/consultation";
+@import "blocks/forms";
+@import "blocks/carousel";
+@import "blocks/catalog";
+@import "blocks/reviews";
+@import "blocks/footer";
+@import "blocks/modal";
+@import "blocks/pickup";
+@import "base/media";
+
+

@@ -1,0 +1,173 @@
+.catalog {
+   padding-bottom: 80px;
+   &__title {
+      color: $cb;
+      text-align: center;
+      font-size: 30px;
+      font-weight: 400;
+      line-height: 45px; /* 150% */
+      text-transform: uppercase;
+   }
+   &__tabs {
+      margin-top: 45px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+   &__tab {
+      width: 222px;
+      height: 52px;
+      color: #6B6B6B;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 52px;
+      text-transform: uppercase;
+      border: 2px solid #D0D0D0;
+      transform: skew(-25deg); // Нахил в градусах всього блоку
+      margin: 0 5px;
+      cursor: pointer;
+      transition: 0.5s all;
+      &:hover {
+         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+      div {
+         transform: skew(25deg); // Відміняємо нахил для текста
+      }
+      &_active {
+         color: $cw;
+         background-color: $bgc_red;
+      }
+   }
+   &__content {
+      margin-top: 57px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      display: none;
+      &_active {
+         display: flex;
+      }
+
+   }
+   &-item {
+      margin-bottom: 19px;
+      position: relative;
+      padding: 20px 18px 21px 23px;
+      width: 304px;
+      min-height: 442px;
+      border: 2px solid #E8E8E8;
+      overflow: hidden;
+      &__wrapper {
+         display: flex;
+         width: calc(200% + 40px);
+      }
+      &__box {
+         width: 50%;
+         margin-right: 0px;
+         transform: translateX(-100%);
+         transition: 0.5s all; 
+         &_active {
+            transform: translateX(0%);
+            margin-right: 20px;
+         }
+      }
+      &__list {
+         position: relative;
+         width: 50%;
+         margin-left: 20px;
+         transform: translateX(0%);
+         padding: 0 18px;
+         transition: 0.5s all;
+         &_active {
+            transform: translateX(-100%);
+            margin-left: 0px;
+         }
+         li {
+            margin-top: 3px;
+            position: relative;
+            color: #555;
+            font-weight: 300;
+            line-height: 21px; /* 150% */
+            &::before {
+               content: '';
+               position: absolute;
+               top: 7px;
+               left: -20px;
+               width: 5px;
+               height: 5px;
+               background-color: $bgc_red;
+            }
+         }   
+      }
+      &__back {
+         position: absolute;
+         bottom: 0;
+         left: 50%;
+         transform: translateX(calc(-50% - 18px));
+         display: block;
+         color: #C70101;
+         font-weight: 500;
+         text-decoration-line: underline;
+         text-transform: uppercase;
+         &:hover {
+            text-decoration-line: underline; 
+         }
+
+      }
+      &__img {
+         display: block; // Вирівнюємо по центру батьківського блоку
+         margin: 0 auto; // Вирівнюємо по центру батьківського блоку
+         min-width: 140px; // Всі картинки повинні бути ширини мінімум 140px
+         height: 200px; // Висота фіксовано, щоб не виходило за батьківський блок
+      }
+      &__title {
+         margin-top: 15px;
+         color: $cb;
+         text-align: center;
+         font-size: 16px;
+         font-weight: 700;
+      }
+      &__descr {
+         margin-top: 15px;
+         color: $cb;
+         text-align: center;
+         font-weight: 300;
+      }
+      &__link {
+         display: block;
+         margin-top: 10px;
+         color: #C70101;
+         text-align: center;
+         font-weight: 500;
+         text-transform: uppercase;
+         text-decoration-line: underline;
+         &:hover {
+            text-decoration-line: underline; 
+         }
+      }
+      hr {
+         margin: 23px 0;
+         width: 100%;
+         height: 1px;
+         background-color: #E8E8E8;
+      }
+      &__footer {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+      }
+      &__old-price {
+         color: #555;
+         font-weight: 300;
+         text-decoration: line-through;
+      }
+      &__new-price {
+         margin-top: 2px;
+         color: #050505;
+         font-size: 20px;
+         font-weight: 700;
+      }
+   }
+}
+
