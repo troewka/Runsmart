@@ -1,6 +1,6 @@
 /-----------------------------------------Slider (Tiny-Slider)------------------------------------------/
 
-const slider = tns({ // Tiny-Slider
+const slider = tns({
    container: '.carousel__slider',
    controls: false,
    items: 1,
@@ -19,11 +19,11 @@ document.querySelector('.carousel__next').addEventListener('click', function () 
 
 /-----------------------------------------TABS (jQuery)-------------------------------------------------/
 
-$(document).ready(function () { // jQuery
+$(document).ready(function () {
 
-   $('ul.catalog__tabs').on('click', 'li:not(.catalog__tab_active)', function () { // Функція переключення TABS та показ контенту відповідного табу
+   $('ul.catalog__tabs').on('click', 'li:not(.catalog__tab_active)', function () {
       $(this)
-         .addClass('catalog__tab_active').siblings().removeClass('catalog__tab_active') // Додавання активного класу для переключення TABS
+         .addClass('catalog__tab_active').siblings().removeClass('catalog__tab_active')
          .closest('div.container').find('div.catalog__content').removeClass('catalog__content_active').eq($(this).index()).addClass('catalog__content_active');
    });
 
@@ -42,15 +42,13 @@ $(document).ready(function () { // jQuery
 
    /-----------------------------------------MODAL (jQuery)------------------------------------------/
 
-   $('[data-modal=consultation]').on('click', function () { // знаходимо кнопки, по Data-атрибуту (який задали раніше) 
-      $('.lining, #consultation').fadeIn('slow'); // показуємо підложку та модальне вікно "консультація" 
+   $('[data-modal=consultation]').on('click', function () {
+      $('.lining, #consultation').fadeIn('slow');
    });
-   $('.modal__close').on('click', function () { // знаходимо хрестик
-      $('.lining, #consultation, #order, #thanks').fadeOut('slow'); // закриваємо клас та всі ID
+   $('.modal__close').on('click', function () {
+      $('.lining, #consultation, #order, #thanks').fadeOut('slow');
    });
-   //$('.button_item').on('click', function () { // знаходимо кнопки, по класу 
-   //   $('.lining, #order').fadeIn('slow'); // показуємо підложку та модальне вікно "купити" 
-   //});
+
    $('.button_item').each(function (i) {
       $(this).on('click', function () {
          $('#order .modal__subtitle').text($('.catalog-item__title').eq(i).text())
@@ -61,7 +59,7 @@ $(document).ready(function () { // jQuery
    /-----------------------------------------VALIDATE (jQuery)-----------------------------------------/
 
    function validateForm(form) {
-      $(form).validate({ // Плагин validate
+      $(form).validate({
          rules: {
             name: {
                required: true,
@@ -92,26 +90,26 @@ $(document).ready(function () { // jQuery
 
    /-----------------------------------------Number mask (jQuery)------------------------------------------/
 
-   $('input[name=tel]').mask("+7 (999) 999-99-99"); // знаходимо по тег атрибуту name
+   $('input[name=tel]').mask("+7 (999) 999-99-99");
 
    /-----------------------------------------POST openserver (jQuery)-------------------------------------/
 
    $('form').submit(function (e) {
-      e.preventDefault(); // відміняємо стандарне поводження браузера
+      e.preventDefault();
 
-      if (!$(this).valid()) { // перевірка валідації форм
+      if (!$(this).valid()) {
          return;
       }
 
-      $.ajax({ // відправка форми на сервер
+      $.ajax({ 
          type: "POST",
          url: "mailer/smart.php",
          data: $(this).serialize()
-      }).done(function () { // після успішної відправки форм:
-         $(this).find("input").val(""); // очищаємо поля вводу
-         $('#consultation, #order').fadeOut(); // закриваємо модальне вікно (форму відправки)
-         $('.lining, #thanks').fadeIn('slow'); // показуємо модальне вікно з успішною відправкою
-         $('form').trigger('reset'); // перезавантажуємо форму
+      }).done(function () {
+         $(this).find("input").val("");
+         $('#consultation, #order').fadeOut();
+         $('.lining, #thanks').fadeIn('slow');
+         $('form').trigger('reset');
       });
       return false;
    });
@@ -119,7 +117,7 @@ $(document).ready(function () { // jQuery
    /-----------------------------------------Scrolling (jQuery)-------------------------------------------/
 
    $(window).scroll(function () {
-      if ($(this).scrollTop() > 1700) { // Показ кнопки "підйому", якщо прокрутили від top 1700px
+      if ($(this).scrollTop() > 1700) {
          $('.pickup').fadeIn();
       } else {
          $('.pickup').fadeOut();
@@ -128,27 +126,17 @@ $(document).ready(function () { // jQuery
 
    /-----------------------------------------Smooth Scrolling (jQuery)-----------------------------------/
 
-   // Add smooth scrolling to all links
-   $("a").on('click', function (event) { // Плавна прокрутка сторінки на вверх
+   $("a").on('click', function (event) {
 
-      // Make sure this.hash has a value before overriding default behavior
       if (this.hash !== "") {
-         // Prevent default anchor click behavior
          event.preventDefault();
-
-         // Store hash
          const hash = this.hash;
 
-         // Using jQuery's animate() method to add smooth page scroll
-         // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
          $('html, body').animate({
             scrollTop: $(hash).offset().top
          }, 800, function () {
-
-            // Add hash (#) to URL when done scrolling (default click behavior)
             window.location.hash = hash;
          });
-      } // End if
+      }
    });
-
 });
